@@ -55,7 +55,9 @@ const DataOverview = () => {
         }}
       >
         <h1 className="text-xl text-[#ffffff] font-medium">Total Project</h1>
-        <h1 className="flex gap-1 mt-4 items-end text-[#ffffff] text-7xl font-medium">78 <MdOutlineDriveFileMove className="text-6xl" /> </h1>
+        <h1 className="flex gap-1 mt-4 items-end text-[#ffffff] text-7xl font-medium">
+          78 <MdOutlineDriveFileMove className="text-6xl" />{" "}
+        </h1>
       </div>
       <div
         className="h-60 rounded-xl p-8 col-span-1"
@@ -65,7 +67,9 @@ const DataOverview = () => {
         }}
       >
         <h1 className="text-xl text-[#ffffff] font-medium">Total Client</h1>
-        <h1 className="flex gap-1 mt-4 items-end text-[#ffffff] text-7xl font-medium">30</h1>
+        <h1 className="flex gap-1 mt-4 items-end text-[#ffffff] text-7xl font-medium">
+          30
+        </h1>
       </div>
     </div>
   );
