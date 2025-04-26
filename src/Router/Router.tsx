@@ -5,6 +5,7 @@ import Root from "../Root/Root";
 import Dashboard from "../Page/Dashboard";
 import Login from "../Page/Authentication/Login";
 import Register from "../Page/Authentication/Register";
+import AddClient from "../Page/Client/AddClient";
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
                 path : '/register',
                 element: <Register></Register>
             },
+            {
+                path:"/addClient",
+                element:<AddClient></AddClient>
+            }
         ],
     },
     {
