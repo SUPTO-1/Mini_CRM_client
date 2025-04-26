@@ -30,7 +30,7 @@ const Login = () => {
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("user", JSON.stringify(res.data.user));
             login(res.data.user, res.data.token);
-            const from = location.state?.from?.pathname || "/addClient";
+            const from = location.state?.from?.pathname || "/dashboard";
             navigate(from, { replace: true });
           } else {
             console.error("No token received in response");

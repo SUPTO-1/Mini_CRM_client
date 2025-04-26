@@ -2,10 +2,12 @@ import {
     createBrowserRouter
 } from "react-router-dom";
 import Root from "../Root/Root";
-import Dashboard from "../Page/Dashboard";
 import Login from "../Page/Authentication/Login";
 import Register from "../Page/Authentication/Register";
+import Dashboard from "../Page/Dashboard/Dashboard";
 import AddClient from "../Page/Client/AddClient";
+import DataOverview from "../Component/DataOverview";
+import PrivateRoute from "../Page/Authentication/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -21,21 +23,22 @@ const router = createBrowserRouter([
                 path : '/register',
                 element: <Register></Register>
             },
-            {
-                path:"/addClient",
-                element:<AddClient></AddClient>
-            }
         ],
     },
     {
         path: "/dashboard",
-        element : <Dashboard/>,
-        // children: [
-        //     {
-        //         path: '/dashboard',
-        //         element: ,
-        //     },
-        // ],
+        element : <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+            {
+                index:true,
+                element:<DataOverview></DataOverview>
+
+            },
+            {
+                path:"addClient",
+                element:<AddClient></AddClient>
+            },
+        ],
     }
 ]);
 
