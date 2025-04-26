@@ -8,6 +8,7 @@ import Dashboard from "../Page/Dashboard/Dashboard";
 import AddClient from "../Page/Client/AddClient";
 import DataOverview from "../Component/DataOverview";
 import PrivateRoute from "../Page/Authentication/PrivateRoute";
+import ViewClients from "../Page/Client/ViewClients";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                 path:"addClient",
                 element:<AddClient></AddClient>
             },
+            {
+                path:"viewClients",
+                element:<ViewClients></ViewClients>
+            }
         ],
     }
 ]);

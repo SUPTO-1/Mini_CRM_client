@@ -4,8 +4,7 @@ import { useAuth } from '../Page/Authentication/AutheContext';
 
 const ProfilePanel = () => {
 
-    const {user} = useAuth();
-
+    const {user , logout} = useAuth();
     const Route = <>
         <li><NavLink to='addClient'>Add Client</NavLink></li>
         <li><NavLink to=''>Add Project</NavLink></li>
@@ -21,7 +20,7 @@ const ProfilePanel = () => {
                     <h1 className='my-2 text-3xl text-center font-semibold'>{user?.name}</h1>
                     <p className='text-center'>{user?.email}</p>
                     <p className='text-center'>{user?.phone}</p>
-                    <hr />
+                    <hr className='my-3' />
                 </div>
 
                 {/* Some Routing List */}
@@ -31,7 +30,7 @@ const ProfilePanel = () => {
 
                 {/* Log Out Button */}
                 <div className="m-6 row-span-1">
-                    <button className='bg-blue-400 w-full py-2 rounded-lg text-lg'>Log Out</button>
+                    <button onClick={logout} className='bg-blue-400 w-full py-2 rounded-lg text-lg'>Log Out</button>
                 </div>
             </div>
         </>

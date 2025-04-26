@@ -2,9 +2,11 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { axiosInstance } from "../Authentication/axiosInstance";
 import Swal from "sweetalert2";
+import { useAuth } from "../Authentication/AutheContext";
 
 const AddClient: React.FC = () => {
   const navigate = useNavigate();
+  const {user} = useAuth();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -15,7 +17,7 @@ const AddClient: React.FC = () => {
       .value;
     const notes = (form.elements.namedItem("notes") as HTMLInputElement).value;
 
-    const client = { name, phone, email, company, notes };
+    const client = { name, phone, email, company, notes, userId: user?.id};
     try {
       const response = await axiosInstance.post("/clients", client);
 
@@ -26,7 +28,7 @@ const AddClient: React.FC = () => {
           icon: "success",
           confirmButtonText: "Okay",
         }).then(() => {
-          navigate("/");
+          navigate("/dashboard");
         });
       } else {
         Swal.fire({
