@@ -9,6 +9,7 @@ import AddClient from "../Page/Client/AddClient";
 import DataOverview from "../Component/DataOverview";
 import PrivateRoute from "../Page/Authentication/PrivateRoute";
 import ViewClients from "../Page/Client/ViewClients";
+import UpdateClient from "../Page/Client/UpdateClient";
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path:"viewClients",
                 element:<ViewClients></ViewClients>
+            },
+            {
+                path:"updateClient/:id",
+                element:<UpdateClient></UpdateClient>
             }
         ],
     }

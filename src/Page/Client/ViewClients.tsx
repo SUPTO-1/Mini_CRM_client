@@ -90,7 +90,7 @@ const ViewClients = () => {
                       <td className="py-3 px-4">{client.company || "-"}</td>
                       <td className="py-3 px-4 space-x-2">
                         <Link
-                          to={`dashboard/updateClient/${client.id}`}
+                          to={`/dashboard/updateClient/${client.id}`}
                           className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                         >
                           Update
@@ -102,7 +102,7 @@ const ViewClients = () => {
                           Delete
                         </button>
                         <Link
-                          to={`dashboard/adProject/${client.id}`}
+                          to={`/dashboard/adProject/${client.id}`}
                           className="bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition-colors"
                         >
                           Project
