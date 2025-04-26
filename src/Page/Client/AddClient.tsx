@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { axiosInstance } from "../Authentication/axiosInstance";
+import Swal from "sweetalert2";
 
 const AddClient: React.FC = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const name = (form.elements.namedItem("name") as HTMLInputElement).value;
@@ -13,7 +16,34 @@ const AddClient: React.FC = () => {
     const notes = (form.elements.namedItem("notes") as HTMLInputElement).value;
 
     const client = { name, phone, email, company, notes };
-    console.log(client);
+    try {
+      const response = await axiosInstance.post("/clients", client);
+
+      if (response.status === 201) {
+        Swal.fire({
+          title: "Success!",
+          text: "Client Added Successfully",
+          icon: "success",
+          confirmButtonText: "Okay",
+        }).then(() => {
+          navigate("/");
+        });
+      } else {
+        Swal.fire({
+          title: "Error!",
+          text: response.data.message,
+          icon: "error",
+          confirmButtonText: "Okay",
+        });
+      }
+    } catch (err: any) {
+      Swal.fire({
+        title: "Error!",
+        text: err.response?.data?.message || "Something went wrong",
+        icon: "error",
+        confirmButtonText: "Okay",
+      });
+    }
   };
 
   return (
