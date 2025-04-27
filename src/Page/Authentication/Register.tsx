@@ -47,9 +47,9 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
-      <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
-        <h2 className="text-2xl font-semibold mb-6 text-center">
+    <div className="flex justify-center items-center min-h-screen bg-[#f2edf3] px-4 py-2">
+      <div className="w-full max-w-md bg-white p-3 md:p-8 rounded-xl shadow-md">
+        <h2 className="text-2xl font-semibold mb-6 text-center bg-gradient-to-r from-[#C65CFF] via-[#B948FF] to-[#7231EC] bg-clip-text text-transparent">
           Create Account
         </h2>
         <form onSubmit={handleRegister} className="space-y-4">
@@ -61,7 +61,7 @@ const Register: React.FC = () => {
               type="text"
               name="name"
               required
-              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#953DF5]"
             />
           </div>
 
@@ -73,7 +73,7 @@ const Register: React.FC = () => {
               type="email"
               name="email"
               required
-              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#953DF5]"
             />
           </div>
 
@@ -85,7 +85,7 @@ const Register: React.FC = () => {
               type="text"
               name="phone"
               required
-              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#953DF5]"
             />
           </div>
 
@@ -97,7 +97,7 @@ const Register: React.FC = () => {
               type="password"
               name="password"
               required
-              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#953DF5]"
             />
           </div>
 
@@ -109,7 +109,7 @@ const Register: React.FC = () => {
               type="password"
               name="confirmPassword"
               required
-              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#953DF5]"
             />
           </div>
 
@@ -121,19 +121,19 @@ const Register: React.FC = () => {
               type="text"
               name="location"
               required
-              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#953DF5]"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md transition duration-200"
+            className="w-full bg-[#953DF5] hover:bg-[#bb84f6] text-white font-semibold py-2 px-4 rounded-md transition duration-200"
           >
             Signup
           </button>
           <p className="text-center text-sm mt-4">
             Already have an account?{" "}
-            <Link to="/" className="text-green-600 hover:underline">
+            <Link to="/" className="text-[#953DF5] hover:underline">
               Login
             </Link>
           </p>

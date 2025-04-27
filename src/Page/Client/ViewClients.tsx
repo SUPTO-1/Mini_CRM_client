@@ -54,14 +54,30 @@ const ViewClients = () => {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
+      <div className="mb-2">
+        <Link
+          to="/dashboard"
+          className="inline-flex items-center text-gray-600 hover:text-[#9866b3] font-medium transition-colors text-sm md:text-base"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 mr-2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
+          </svg>
+          Back to Dashboard
+        </Link>
+      </div>
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 md:p-8">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold text-gray-800">Client List</h1>
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#C65CFF] via-[#B948FF] to-[#7231EC] bg-clip-text text-transparent">Client List</h1>
             <Link
               to="/dashboard/addClient"
-              className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+              className="bg-[#52D5B2] text-white px-4 py-2 rounded-lg hover:bg-[#23BB98] transition-colors text-sm md:text-base"
             >
               Add New Client
             </Link>
@@ -88,7 +104,7 @@ const ViewClients = () => {
                       <td className="py-3 px-4">{client.email}</td>
                       <td className="py-3 px-4">{client.phone}</td>
                       <td className="py-3 px-4">{client.company || "-"}</td>
-                      <td className="py-3 px-4 space-x-2">
+                      <td className="py-3 px-4 space-x-2 space-y-4">
                         <Link
                           to={`/dashboard/updateClient/${client.id}`}
                           className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors"

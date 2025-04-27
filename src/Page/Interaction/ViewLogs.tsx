@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../Authentication/axiosInstance";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 interface Interaction {
   id: number;
@@ -53,7 +54,23 @@ const ViewLogs = () => {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8 h-screen">
+      <div className="mb-2">
+        <Link
+          to="/dashboard"
+          className="inline-flex items-center text-gray-600 hover:text-[#9866b3] font-medium transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 mr-2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
+          </svg>
+          Back to Dashboard
+        </Link>
+      </div>
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
           <h1 className="text-3xl font-bold text-gray-800 text-center mb-8">Interaction Logs</h1>

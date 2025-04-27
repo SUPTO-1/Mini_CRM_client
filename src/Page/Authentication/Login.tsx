@@ -55,17 +55,17 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="flex flex-col lg:flex-row items-center w-full max-w-5xl p-4 lg:p-0 bg-white shadow-lg rounded-lg">
-        <div className="hidden lg:block w-full lg:w-1/2 p-6">
+    <div className="min-h-screen p-2 bg-[#f2edf3] flex items-center justify-center">
+      <div className="flex flex-col lg:flex-row items-center md:w-8/12 mx-auto mt-5 lg:max-w-5xl p-4 lg:p-0 bg-white shadow-lg rounded-lg">
+        <div className="w-full lg:w-1/2 p-6">
           <img
             src={loginImage}
             alt="Login"
-            className="w-full h-auto object-cover rounded-lg"
+            className="w-7/12 md:w-1/2 md:h-1/2 mx-auto lg:w-full lg:h-auto object-cover rounded-lg"
           />
         </div>
-        <div className="w-full lg:w-1/2 p-6">
-          <h2 className="text-2xl font-semibold text-center mb-6">
+        <div className="w-full lg:w-1/2 lg:p-6 p-3">
+          <h2 className="text-2xl font-semibold text-center mb-6 bg-gradient-to-r from-[#C65CFF] via-[#B948FF] to-[#7231EC] bg-clip-text text-transparent">
             Login To Your Account
           </h2>
           <form onSubmit={handleLogin} className="space-y-4">
@@ -77,7 +77,7 @@ const Login = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#953DF5]"
                 placeholder="Email"
                 required
               />
@@ -93,20 +93,20 @@ const Login = () => {
                 type="password"
                 id="password"
                 name="password"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#953DF5]"
                 placeholder="Password"
                 required
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md transition duration-200"
+              className="w-full bg-[#953DF5] hover:bg-[#bb84f6] text-white font-semibold py-2 px-4 rounded-md transition duration-200"
             >
               Login
             </button>
             <p className="text-center text-sm mt-4">
               Don't have an account?{" "}
-              <Link to="/register" className="text-green-600 hover:underline">
+              <Link to="/register" className="text-[#953DF5] hover:underline">
                 Sign Up
               </Link>
             </p>

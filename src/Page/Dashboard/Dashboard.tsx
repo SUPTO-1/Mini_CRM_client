@@ -5,11 +5,11 @@ import ProfilePanel from "../../Component/ProfilePanel";
 const Dashboard = () => {
     return (
         <>
-            <div className="grid grid-cols-10 gap-4">
-                <div className="col-span-2">
+            <div className="lg:grid lg:grid-cols-10">
+                <div className="lg:col-span-2">
                     <ProfilePanel />
                 </div>
-                <div className="col-span-8">
+                <div className="lg:col-span-8 bg-[#f2edf3] lg:h-0">
                     <Outlet></Outlet>
                 </div>
             </div>
