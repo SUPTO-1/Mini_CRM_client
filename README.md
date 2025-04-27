@@ -119,7 +119,7 @@ npm run dev
 
 ## 🗺️ Entity Relationship Diagram (ERD)
 
-📌 _ERD Image Link (will be updated soon!)_
+📌 ![ER Diagram](./Images/erd.png) 
 
 ---
 
@@ -148,7 +148,7 @@ For **detailed documentation**, visit 👉 [Documentation Link](https://docs.goo
 
 ## 🧑‍💻 Author
 
-**Jahidul Islam Supta**
+**Md Jahidul Islam Supta**
 
 ---
 
