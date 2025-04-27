@@ -6,8 +6,9 @@ const ProfilePanel = () => {
 
     const {user , logout} = useAuth();
     const Route = <>
+        <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
         <li><NavLink to='addClient'>Add Client</NavLink></li>
-        <li><NavLink to=''>Add Project</NavLink></li>
+        <li><NavLink to=''>Add meetings</NavLink></li>
         <li><NavLink to=''>Set Reminder</NavLink></li>
     </>
     return (
