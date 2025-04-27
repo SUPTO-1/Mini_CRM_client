@@ -102,7 +102,7 @@ const ViewClients = () => {
                           Delete
                         </button>
                         <Link
-                          to={`/dashboard/adProject/${client.id}`}
+                          to={`/dashboard/addProject/${client.id}`}
                           className="bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition-colors"
                         >
                           Project

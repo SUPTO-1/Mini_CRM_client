@@ -10,6 +10,9 @@ import DataOverview from "../Component/DataOverview";
 import PrivateRoute from "../Page/Authentication/PrivateRoute";
 import ViewClients from "../Page/Client/ViewClients";
 import UpdateClient from "../Page/Client/UpdateClient";
+import AddProject from "../Page/Project/AddProject";
+import ViewProjects from "../Page/Project/ViewProject";
+import UpdateProject from "../Page/Project/UpdateProject";
 
 
 const router = createBrowserRouter([
@@ -47,7 +50,19 @@ const router = createBrowserRouter([
             {
                 path:"updateClient/:id",
                 element:<UpdateClient></UpdateClient>
-            }
+            },
+            {
+                path:"addProject/:clientId",
+                element:<AddProject></AddProject>
+            },
+            {
+                path:"viewProjects",
+                element:<ViewProjects></ViewProjects>
+            },
+            {
+                path: "updateProject/:id",
+                element: <UpdateProject></UpdateProject>
+              }
         ],
     }
 ]);
