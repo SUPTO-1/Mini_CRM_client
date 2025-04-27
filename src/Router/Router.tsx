@@ -13,6 +13,8 @@ import UpdateClient from "../Page/Client/UpdateClient";
 import AddProject from "../Page/Project/AddProject";
 import ViewProjects from "../Page/Project/ViewProject";
 import UpdateProject from "../Page/Project/UpdateProject";
+import AddMeeting from "../Page/Interaction/AddMeeting";
+import ViewLogs from "../Page/Interaction/ViewLogs";
 
 
 const router = createBrowserRouter([
@@ -62,7 +64,19 @@ const router = createBrowserRouter([
             {
                 path: "updateProject/:id",
                 element: <UpdateProject></UpdateProject>
-              }
+            },
+            {
+                path: "addMeeting/client/:clientId",
+                element: <AddMeeting />
+            },
+            {
+                path: "addMeeting/project/:projectId",
+                element: <AddMeeting />
+            },
+            {
+                path:"viewLogs",
+                element:<ViewLogs></ViewLogs>
+            }
         ],
     }
 ]);

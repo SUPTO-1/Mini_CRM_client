@@ -107,6 +107,12 @@ const ViewClients = () => {
                         >
                           Project
                         </Link>
+                        <Link
+                          to={`/dashboard/addMeeting/client/${client.id}`}
+                          className="bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+                        >
+                          Meeting
+                        </Link>
                       </td>
                     </tr>
                   ))}

@@ -59,7 +59,9 @@ const ViewProjects = () => {
     <div className="p-8">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-            <h1 className="text-3xl font-bold text-gray-800 text-center mb-8">Project List</h1>
+          <h1 className="text-3xl font-bold text-gray-800 text-center mb-8">
+            Project List
+          </h1>
           {loading ? (
             <div className="text-center py-8">Loading projects...</div>
           ) : (
@@ -105,6 +107,12 @@ const ViewProjects = () => {
                           className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700"
                         >
                           Update
+                        </Link>
+                        <Link
+                          to={`/dashboard/addMeeting/project/${project.id}`}
+                          className="bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700"
+                        >
+                          Meeting
                         </Link>
                         <button
                           onClick={() => handleDelete(project.id)}
