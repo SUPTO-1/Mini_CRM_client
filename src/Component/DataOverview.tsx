@@ -11,6 +11,7 @@ const DataOverview = () => {
   const { user } = useAuth();
   const [totalProjects, setTotalProjects] = useState(0);
   const [totalInteractions, setTotalInteractions] = useState(0);
+  const [remindersCount, setRemindersCount] = useState(0);
   useEffect(() => {
     const fetchTotalClients = async () => {
       try {
@@ -54,6 +55,20 @@ const DataOverview = () => {
       fetchTotalInteractions();
     }
   }, [user]);
+
+  useEffect(() => {
+    const fetchRemindersCount = async () => {
+      try {
+        const response = await axiosInstance.get("/reminders/weekly");
+        setRemindersCount(response.data.length);
+      } catch (error) {
+        console.log("reminders error", error);
+      }
+    };
+    if (user) {
+      fetchRemindersCount();
+    }
+  }, [user]);  
 
   if (loading) {
     return <div className="w-11/12 mx-auto pt-16">Loading client count...</div>;
@@ -113,6 +128,24 @@ const DataOverview = () => {
           className="absolute bottom-4 right-4 bg-white/20 text-white px-4 py-2 rounded-lg hover:bg-white/30 transition-all"
         >
           View Logs
+        </Link>
+      </div>
+      <div
+        className="h-60 rounded-xl p-8 col-span-1 relative"
+        style={{
+          background:
+            "linear-gradient(50deg, #B3E7D0, #82DFC6, #52D5B2, #23BB98)",
+        }}
+      >
+        <h1 className="text-xl text-white font-medium">Upcoming Reminders</h1>
+        <h1 className="flex gap-1 mt-4 items-end text-white text-7xl font-medium">
+          {remindersCount}
+        </h1>
+        <Link
+          to="viewReminders"
+          className="absolute bottom-4 right-4 bg-white/20 text-white px-4 py-2 rounded-lg hover:bg-white/30 transition-all"
+        >
+          View Reminders
         </Link>
       </div>
     </div>

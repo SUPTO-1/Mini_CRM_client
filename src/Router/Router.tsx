@@ -15,6 +15,8 @@ import ViewProjects from "../Page/Project/ViewProject";
 import UpdateProject from "../Page/Project/UpdateProject";
 import AddMeeting from "../Page/Interaction/AddMeeting";
 import ViewLogs from "../Page/Interaction/ViewLogs";
+import AddReminder from "../Page/Reminders/AddReminder";
+import WeeklyReminders from "../Page/Reminders/WeeklyReminders";
 
 
 const router = createBrowserRouter([
@@ -76,6 +78,14 @@ const router = createBrowserRouter([
             {
                 path:"viewLogs",
                 element:<ViewLogs></ViewLogs>
+            },
+            {
+                path:'addReminder',
+                element:<AddReminder></AddReminder>
+            },
+            {
+                path: "viewReminders",
+                element: <WeeklyReminders></WeeklyReminders>
             }
         ],
     }
