@@ -1,54 +1,155 @@
-# React + TypeScript + Vite
+# 🌟 Mini-CRM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, powerful CRM (Customer Relationship Management) application to manage clients, projects, meetings, and reminders — built with **React**, **Node.js**, **Express**, **PostgreSQL**, **Prisma ORM**, and **TypeScript**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### 🔒 Authentication
+- Secure **Signup** and **Login** system
+- Passwords are hashed securely using **bcrypt**
+- **JWT (JSON Web Token)** used for authentication
+- Tokens stored in **Local Storage** for persistent sessions
+- All sensitive routes are protected — only authenticated users can access them
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> **JWT Features:**
+> - Stateless authentication (no session storage needed on the server)
+> - Secure and scalable
+> - Easy user verification with token expiration control  
+>
+> **Local Storage Features:**
+> - Persists data even after page refresh
+> - Simple API for storing and retrieving tokens
+> - Best suited for non-sensitive data storage on client-side
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+### 👤 Clients Management
+- **CRUD Operations**: Create, View, Update, and Delete clients
+- **Required Fields**: `Name`, `Email`, `Phone`
+- **Optional Fields**: `Company`, `Notes`
+- Each user manages their **own** clients independently
+
+---
+
+### 📈 Projects Management
+- Projects are **linked** to individual clients
+- **CRUD Operations**: Full control over project data
+- **Required Fields**: `Title`, `Budget`, `Deadline`, `Status`
+
+---
+
+### 📞 Interaction Logs
+- Log calls, meetings, or emails related to clients or projects
+- **Fields**: `Date`, `Interaction Type`, `Notes`
+- Track all communication easily
+
+---
+
+### ⏰ Reminders
+- Add **Reminders** linked to clients or projects
+- View a summary of **upcoming reminders** for the week
+- Never miss important follow-ups again!
+
+---
+
+### 📊 Dashboard Overview
+- Beautiful overview with important metrics:
+  - 🔹 Total Clients
+  - 🔹 Total Projects
+  - 🔹 Reminders Due Soon
+  - 🔹 Projects by Status
+- Easy to visualize and navigate
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React** (with **TypeScript**)
+- **TailwindCSS** for beautiful UI
+- **SweetAlert2 (swal2)** for alerts and modals
+- **React Router Dom** for navigation
+- **Axios** for API calls
+
+> **Frontend Prerequisites**: Node.js installed
+
+---
+
+### Backend
+- **Node.js** + **Express**
+- **TypeScript** for robust backend structure
+- **PostgreSQL** Database
+- **Prisma ORM** for database communication
+- **JWT Authentication**
+- **bcrypt** for password hashing
+- **CORS** and **dotenv** for environment configuration
+
+> **Backend Prerequisites**:  
+> - Node.js installed  
+> - PostgreSQL installed and running
+
+---
+
+## ⚙️ Installation & Setup
+
+### Backend Setup
+```bash
+git clone <your-repo-url>
+cd backend
+npm install
+npx prisma migrate dev
+# Provide migration name when prompted
+npm run dev
+```
+- To start Prisma Studio (optional for DB visualization):
+```bash
+npx prisma studio
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
 ```
+
+---
+
+## 🗺️ Entity Relationship Diagram (ERD)
+
+📌 _ERD Image Link (will be updated soon!)_
+
+---
+
+## 📚 Documentation
+
+For **detailed documentation**, visit 👉 [Documentation Link](https://docs.google.com/document/d/1p2s4AADD3wTnqJnRIuMsVGvf3nFN3ZTJ_Uv3uYjqvl4/edit?usp=sharing)
+
+---
+
+## 💡 Future Improvements
+- Add file upload functionality (attachments with clients/projects)
+- Implement real-time notifications
+- Advanced dashboard analytics
+- Dark mode UI option
+
+---
+
+## 🙌 Acknowledgements
+- Prisma ORM
+- PostgreSQL
+- TailwindCSS
+- React Router Dom
+- SweetAlert2
+
+---
+
+## 🧑‍💻 Author
+
+**Jahidul Islam Supta**
+
+---
+
+# 🌟 Thank you for visiting Mini-CRM! 🌟

@@ -8,7 +8,6 @@ const ProfilePanel = () => {
     const Route = <>
         <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
         <li><NavLink to='addClient'>Add Client</NavLink></li>
-        <li><NavLink to=''>Add meetings</NavLink></li>
         <li><NavLink to='addReminder'>Set Reminder</NavLink></li>
     </>
     return (
